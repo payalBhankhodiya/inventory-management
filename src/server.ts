@@ -12,6 +12,7 @@ import {
 } from "fastify-type-provider-zod";
 import { registerPermission } from "./plugins/permission.js";
 import { departmentRoutes } from "./routes/department.routes.js";
+import { locationRoutes } from "./routes/location.routes.js";
 
 const app = Fastify({
   logger: true,
@@ -40,6 +41,10 @@ const start = async () => {
 
     await app.register(departmentRoutes, {
       prefix: "/api/departments",
+    });
+
+    await app.register(locationRoutes, {
+      prefix: "/api/locations",
     });
 
     await app.listen({
