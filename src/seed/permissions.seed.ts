@@ -35,7 +35,8 @@ const permissionList = [
   "stock.read",
   "stock.create",
   "stock.update",
-
+  "stock.delete",
+  
   "vendors.read",
   "vendors.create",
   "vendors.update",

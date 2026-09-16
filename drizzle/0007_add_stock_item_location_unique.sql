@@ -1,0 +1,1 @@
+ALTER TABLE "stock" ADD CONSTRAINT "stock_item_location_unique" UNIQUE("item_id","location_id");

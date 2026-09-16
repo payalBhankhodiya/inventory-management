@@ -1,6 +1,7 @@
 import {
   pgTable,
   uuid,
+  text,
   varchar,
   timestamp,
 } from "drizzle-orm/pg-core";
@@ -10,7 +11,9 @@ export const categories = pgTable("categories", {
 
   name: varchar("name", { length: 100 }).notNull().unique(),
 
-  description: varchar("description", { length: 255 }),
+  parentCategoryId: uuid("parent_category_id"),
+
+  description: text("description"),
 
   createdAt: timestamp("created_at").defaultNow().notNull(),
 
